@@ -1,0 +1,39 @@
+{
+  "version": "1.2.0",
+  "bankVersion": "2026-11-27",
+  "structuredQuestions": 3034,
+  "levels": {
+    "A2": {
+      "total": 1028,
+      "grammar": 785,
+      "vocab": 83,
+      "listening": 43,
+      "writing": 59,
+      "speaking": 58
+    },
+    "B1": {
+      "total": 1045,
+      "grammar": 805,
+      "vocab": 83,
+      "listening": 42,
+      "writing": 58,
+      "speaking": 57
+    },
+    "A1": {
+      "total": 605,
+      "grammar": 401,
+      "vocab": 73,
+      "listening": 37,
+      "writing": 47,
+      "speaking": 47
+    },
+    "A0": {
+      "total": 356,
+      "vocab": 72,
+      "listening": 36,
+      "writing": 42,
+      "speaking": 42,
+      "grammar": 164
+    }
+  }
+}
