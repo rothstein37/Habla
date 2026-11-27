@@ -1,39 +1,55 @@
 {
-  "version": "1.2.0",
+  "version": "1.3.0",
   "bankVersion": "2026-11-27",
-  "structuredQuestions": 3034,
+  "structuredQuestions": 3874,
   "levels": {
     "A2": {
-      "total": 1028,
+      "total": 1224,
       "grammar": 785,
-      "vocab": 83,
+      "vocab": 279,
       "listening": 43,
       "writing": 59,
-      "speaking": 58
+      "speaking": 58,
+      "vocabWords": 45,
+      "vocabPacks": 9,
+      "pictureQuestions": 5
     },
     "B1": {
-      "total": 1045,
+      "total": 1236,
       "grammar": 805,
-      "vocab": 83,
+      "vocab": 274,
       "listening": 42,
       "writing": 58,
-      "speaking": 57
+      "speaking": 57,
+      "vocabWords": 45,
+      "vocabPacks": 9,
+      "pictureQuestions": 5
     },
     "A1": {
-      "total": 605,
+      "total": 832,
       "grammar": 401,
-      "vocab": 73,
+      "vocab": 300,
       "listening": 37,
       "writing": 47,
-      "speaking": 47
+      "speaking": 47,
+      "vocabWords": 45,
+      "vocabPacks": 9,
+      "pictureQuestions": 15
     },
     "A0": {
-      "total": 356,
-      "vocab": 72,
+      "total": 582,
+      "vocab": 298,
       "listening": 36,
       "writing": 42,
       "speaking": 42,
-      "grammar": 164
+      "grammar": 164,
+      "vocabWords": 45,
+      "vocabPacks": 9,
+      "pictureQuestions": 14
     }
-  }
+  },
+  "glossaryEntries": 1080,
+  "vocabularyPacks": 36,
+  "vocabularyWords": 180,
+  "originalBankQuestions": 3034
 }

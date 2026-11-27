@@ -1,18 +1,21 @@
-# Habla · v1.2.0
-Personal Spanish-learning web app. Preserves the v1.1 Hebrew-first interface and local storage key. A0 means pre-A1, not a formal CEFR certification. No paid services, personal data, API keys or login credentials are included.
+# Habla · v1.3.0
 
-## What's new
-- 3034 built-in exercises: A2 1028, B1 1045, A1 605, A0 356. Includes original questions, controlled grammar and phrase variants, and open tasks; numbers are generated separately. Variants may revisit the same vocabulary or grammar skill. Stable IDs and local seen history prioritize unseen questions across sessions; repeats can occur when the selected pool is exhausted, on a fresh device, after storage loss, or after changing formats.
-- 5 minutes: up to 2 skills in auto mode; 15: balanced rotation; 30: increased writing/speaking emphasis. Focused mode stays on the selected skill.
-- A0 profile option and A0 number range 0–20. Removed JSON export and level-test references from visible settings; local progress is preserved when updating on the same origin.
-- Speech recognition starts directly from a user click; handles unsupported APIs, insecure contexts, offline, permission, no-speech, audio capture and network errors. Transcript can be edited before assessment. Microphone and device support not guaranteed. No pronunciation scoring or free-response AI. Keyboard dictation/typing fallback. Browser transcription may send audio to a browser service.
-- Responsive mobile web app, manifest, network-first navigation with cached offline fallback, version check on reconnect/foreground; new published content loads on online navigation. Update prompt does not interrupt an active lesson. After initial successful online caching, text exercises can work offline. Offline TTS needs a local voice; transcription requires compatible connected browser. Browser may clear local data.
+Spanish practice web app, Hebrew-first, with offline-capable built-in content. A0 means pre-A1, not a formal CEFR level.
+
+## Changes
+- Local roster: choose an existing profile by stable ID; create and rename profiles in a separate management screen. Renaming preserves progress and scores. This is not authenticated administration, and local profiles/leaderboard are still per browser/device. No credentials, personal data or API keys in the public repository.
+- 36 vocabulary packs, nine per level, five words each. Learn the words with meanings, examples and optional speech; practice only the current pack with multiple choice, listening, production, contextual completion and pictograms where suitable. Each word must be attempted before explicitly confirming readiness for the next pack. Pack position is stored per profile and level.
+- 3874 structured question variants across all levels and packs (plus generated numbers). The original bank retains 3,034 items, with its old vocabulary questions replaced by pack-based variants during practice. Only the current pack is active.
+- Local Spanish-to-Hebrew glossary with 1,080 mapped entries plus simple plural fallback. Hover or touch a displayed Spanish word. No external translation request; unknown words are labeled, not fabricated. Translations can depend on context.
+- Exact accepted answers get full credit. Other open answers use approximate 0–10 word-overlap scoring against the best matching model, with negation warning and explanations. This is not a grammatical or semantic evaluation. Free responses can be valid despite low overlap; estimated points are not counted as verified correctness.
+- Timed 5/15/30-minute automatic lessons; focused practice has no countdown. Home and Practice are distinct.
+- Study time: visible exercise time with periodic local saving, excluding background and idle time after three minutes without input; today, today plus preceding six calendar days, and all-time. Legacy saved sessions are migrated once. Not a measurement of attention; older unrecorded time cannot be recovered.
+- Same local-storage key as v1.2. No reset of existing profiles.
+- Updated offline cache/version. Speech recognition uses browser services; physical-device compatibility and offline installation must be checked.
+
+## Validation
+JavaScript parsed. Mock DOM and storage tests checked normalized duplicate names, rename without loss, 36 packs and all choice variants, no premature advancement, exact and partial scoring, timed versus untimed practice, migration without double-counting, active/background/resumed study time, and seven-day cutoff. Static audit found local glossary entries or fallback for each Spanish word token in built-in questions and vocabulary examples. These are simulated and structural checks, not independent language review or live browser acceptance testing.
 
 ## Publish
-In GitHub: Settings → Pages → Build and deployment → Source: Deploy from a branch → Branch: main / (root) → Save. Wait for deployment, then open the published HTTPS address shown by Pages. For Android use Chrome Add to Home screen / Install app where offered; on iOS use Safari Share → Add to Home Screen. First open online. Real device installation, microphone and offline behavior still need testing.
-
-## Checks in this release
-Both scripts and service worker parsed in JavaScript. Checked unique IDs, four distinct choices and valid correct answers for all multiple-choice items. Simulated DOM/storage tests selected 120 distinct questions per level and a fresh question in the next session, exercised durations, A0 numbers, feedback, removed settings, and mocked speech recognition including permission error. These are not physical-device tests; generated language content is not a certified curriculum and has not been independently reviewed item-by-item.
-
-## Known limitations
-Local profiles and leaderboard are per device/browser only; cross-device user accounts and a shared leaderboard need an authenticated backend (e.g. Supabase) with access control. No registration or expenditure has been initiated. Existing downloadable file previews use a different origin than Pages, so their browser data does not automatically transfer. No external AI feedback yet; unknown open answers receive a model and self-check rather than invented grade. Not designed for use while driving. Content is updated when new versions are committed/published; no autonomous AI content-generation service.
+GitHub Pages: Settings → Pages → Deploy from a branch → main / (root). Reload the published HTTPS site after deployment. No additional signup needed for local features.
+For secure admin-issued accounts and shared cross-device scores, add an authenticated backend with server-enforced permissions. No backend service has been configured.
